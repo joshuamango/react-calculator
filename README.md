@@ -4,6 +4,8 @@ A simple calculator that supports addition, subtraction, division, and multiplic
 
 I decided to build this after reading an [article](https://daveceddia.com/react-practice-projects/) about some fun React projects to build. I came up with the cool color scheme through this [pallete generator](https://materialpalette.com). I think it came out pretty well. Let me know what you think: [@Joshster_](https://twitter.com/Joshster_)
 
+If you want to try (and I hope you do ^_^) it it's hosted on Heroku: [https://immense-island-63202.herokuapp.com/](https://immense-island-63202.herokuapp.com/)
+
 ## Gif
 ![](preview.gif "Using the calculator")
 
