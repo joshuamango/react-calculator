@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app-container {
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#display {
+  width: 500px;
+}
+
+#calculator-container {
+  margin-top: 85px;
+  margin-bottom: 85px;
+}
+
+.container div{
+  max-width: 500px;
+  min-height: 100px;
+}
+
+.row {
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+  -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
+
+.last {
+  border-radius: 0px 0px 0px 50px;
+}
+
+.first {
+  border-radius: 0px 50px 0px 0px;
+}
+
+.zero-button {
+  border-radius: 0px 0px 0px 50px;
+}
+
+.container button {
+  max-width: 500px;
+  min-height: 100px;
+}
+
+#calculator-container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+p {
+  padding-top: 20px;
+  font-size: 50px;
+  font-family: 'Lobster', cursive;
+}
+
+#display-input {
+  height: 150px;
+  font-family: 'Lobster', cursive;
+  font-size: 80px;
+  text-align: right;
+  background-color: #455A64;
+  border: none;
+  color: white;
+  padding: 25px;
+  border-radius: 0px 50px 0px 0px;
+}
+
+button {
+  background-color: white;
+  border: 1px solid #757575;
+}
+
+.operation {
+  background-color: #CDDC39;
+  color: white;
+}
+
+.form-control::-webkit-input-placeholder { color: white; opacity: 0.5; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: white; opacity: 0.5; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: white; opacity: 0.5;  }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: white; opacity: 0.5; }  
+input::-ms-clear {
+  display: none;
 }
