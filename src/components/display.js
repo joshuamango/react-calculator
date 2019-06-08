@@ -12,7 +12,7 @@ class Display extends React.Component {
   render() {
     return (
       <div id="display">
-        <input id="display-input" value={this.state.displayValue} onChange={e => this.setState({displayValue: e.target.value})} type="text" className="form-control" placeholder="0"></input>
+        <input id="display-input" value={this.props.value} onChange={e => this.props.change(e.target.value)} type="text" className="form-control" placeholder="0"></input>
       </div>
     );
   }
