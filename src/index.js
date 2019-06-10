@@ -7,6 +7,7 @@ import "./index.css";
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       displayValue: "",
       store: []
@@ -16,16 +17,22 @@ class Calculator extends React.Component {
     this.changeStore = this.changeStore.bind(this);
   }
 
+  /* Used to add a number to the display of the calculator
+   This is called when a number 0-9 is clicked */
   changeDisplayValue(newValue) {
     this.setState({displayValue: newValue});
   }
 
+  /* This method is called whenever an operator i.e. (+, -, *, /, =) is clicked.
+     If one of the arithmetic operators is clicked, this method adds the current
+     display value and the operator that was clicked to the store. Otherwise, it 
+     evaluates the elements in the store and displays the result. */
   changeStore(e) {
 
     // Get operator that called this function
     let operator = e.target.innerHTML;
 
-    //console.log(operator); 
+    // Exchange symbols for the actual javascript operators. Example: ÷ => /
     switch(operator) {
       case "−": operator = "-"; break;
       case "÷": operator = "/"; break;
@@ -53,37 +60,30 @@ class Calculator extends React.Component {
       newStore.push(operator);
     }
 
-    // Update store
+    // Update store and clear display
     this.setState({store: newStore});
     this.changeDisplayValue("");
 
-    // Evaluate expression if the equal sign was pressed
+    // Evaluate expression if the equal sign was clicked
     if (operator === "=") {
       this.evaluate(); 
       return;
     }
   }
-
+ 
+  /* This method evaluates the expression in the store 
+     and displays the result on the calculator's display. */
   evaluate() {
-    // Save the store
+    // Save a copy of the store
     let array = this.state.store;
 
     // Reset the store
     this.setState({store: []});
-    console.log(array);
-    console.log(array.join(" "));
+
+    // Evaluate expression and display result
     let expression = array.join(" ");
     let result = eval(expression);
-    console.log(result);
     this.setState({displayValue: result});
-    /*
-      Example: input -> [1, +, 3];   output -> 4
-      Example: input -> [1, /, 3, *, 9, +, 14, -, 3];    output -> 
-                        [0.3, *, 9, +, 14, 0, 3]
-                        []
-      1. Traverse through array and find * or /
-      2. 
-    */ 
   }
 
   render() {
@@ -106,7 +106,7 @@ class Calculator extends React.Component {
   }
 }
 
-
+// Render app in div "root"
 ReactDOM.render(
   <Calculator />,
   document.getElementById('root')
